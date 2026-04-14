@@ -8,9 +8,9 @@ metadata:
     tier: frontend
     component: frontend
   annotations:
-      kubernetes.io/change-cause: "{{ .Values.deployment.changeCause }}"
+      kubernetes.io/change-cause: {{ .Values.deployment.changeCause }}
 spec:
-  replicas: "{{ .Values.deployment.replicas }}"
+  replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
       project: roboshop
@@ -27,4 +27,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:"{{ .Values.deployment.imageVersion }}""
+        image: nginx:{{ .Values.deployment.imageVersion }}
